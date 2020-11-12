@@ -2,3 +2,34 @@ child: Image.asset(
                       "assets/images/map.png",
                       fit: BoxFit.contain,
                     ),
+
+
+
+
+
+ phpcara membuka laravel :
+ 1. buka git bash
+ 2. ketik " cd C:\xampp\htdocs\CobaLaravel " untuk pergi ke folder htdocs
+ 3. ketik lagi " cd CobaLaravel " untuk membuka folder project
+ 4. ketik " php artisan serve " untuk mendapatkan link project
+ 5. buka vs code : geser project dari htdocss > geser ke vscode > resource > views > layout , untuk ke projectnya
+
+ cara Push Folder ke github
+ 1. klik kanan lalu klik git bashi here
+ 2. lalu ketik "git init"
+ 3. " git add . "
+ 4. "git config --global user.name "hendratrias" "
+ 5. git config --global user.eamil "htrias4@gmail.com"
+ --jika ingin menambahkan file yg sudah dirubah
+ 6. git commit -m "perubahannya"
+ 7. git remote add origin ...http...
+ 8. git push -u origin master atau git push origin master --force
+
+ https://github.com/hendratrias/pemrogramanMobile.git
+
+ https://drive.google.com/file/d/1l9G_Mt0kbR7jyx0c9dHlU4ErmzhGe25S/view
+
+ sftp://proxy.ilkom.unej.ac.id
+ 182410102087
+ secret
+ 22201
