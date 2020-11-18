@@ -55,7 +55,7 @@ class _MyHeaderState extends State<MyHeader> {
               child: SvgPicture.asset("assets/icons/menu.svg"),   //Menambahkan Icon
             ),
             SizedBox(height: 20), //Membuat Box
-            Expanded(   
+            Expanded(
               child: Stack(
                 children: <Widget>[
                   Positioned(   //mengarahkan dimana posisi widget tersebut hendak ditempatkan
@@ -64,7 +64,7 @@ class _MyHeaderState extends State<MyHeader> {
                       widget.image,
                       width: 230,
                       fit: BoxFit.fitWidth,
-                      alignment: Alignment.topCenter,   
+                      alignment: Alignment.topCenter,
                     ),
                   ),
                   Positioned(   //mengarahkan dimana posisi widget tersebut hendak ditempatkan
@@ -89,7 +89,7 @@ class _MyHeaderState extends State<MyHeader> {
 }
 
 class MyClipper extends CustomClipper<Path> {           //JADI CLASS INI MENG-EXTEND CUSTOMCLIPPER YANG SEBENARNYA BISA LANGSUNG DI EMBED PADA CODE DI ATAS
-                                                      //AGAR LEBIH READBALE MAKA KITA PISAHKAN
+  //AGAR LEBIH READBALE MAKA KITA PISAHKAN
   @override
 
   //ATTRIBUTE INI YANG AKAN MENJADI TEMPAT KITA MENDESAIN SETIAP SUDUTNYA
