@@ -1,21 +1,16 @@
-# Covid-19 - Flutter UI
+# pemrogramanMobile
+# alocovid
 
-## [Watch it on YouTube](https://youtu.be/zx6uMCoW2gQ)
+Aplikasi ini menerapkan SDGS3 yaitu Good Health and well being, dan kami akan membuat aplikasi mobile yang bertemakan dengan covid dengan judul ( Alo Covid)
 
-**Packages we are using:**
+# Progres 1 : Membuat Widget
+# Progres 2 : Membuat custom widget
+# Progres 3 : Membuat custom ListView
+# UTS : Presentasi
 
-- flutter_svg: [link](https://pub.dev/packages/flutter_svg)
 
-**Fonts**
 
-- Poppins [link](https://fonts.google.com/specimen/Poppins)
-
-**UI Credit**
-
-- Design by: Rendi Ramadana [link](https://www.uplabs.com/posts/coronavirus-information-concept)
-
-### Covid-19 App Final UI
-
-![App UI](/covid_19.png)
-
-![Demo](https://user-images.githubusercontent.com/5730051/79185949-8acf3c80-7e42-11ea-984d-b098cfee5cd1.gif)
+Nama anggota :
+Havilda Jayanti : 182410102088
+Hendra Trias Sisanto : 182410102087
+Saudi Efendi : 182410102022

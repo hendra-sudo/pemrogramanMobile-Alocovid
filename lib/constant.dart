@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// CONSTANT adalah tempat untuk mendeklarasikan atau mengimpor library yang dibutuhkan oleh aplikasi
+
+
 // Colors
 const kBackgroundColor = Color(0xFFFEFEFE);
 const kTitleTextColor = Color(0xFF303030);

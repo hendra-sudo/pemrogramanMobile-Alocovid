@@ -1,32 +1,32 @@
-import 'package:covid_19/constant.dart';
+import 'package:covid_19/constant.dart'; // import adalah tempat untuk mendeklarasikan atau mengimpor library yang dibutuhkan oleh aplikasi
 import 'package:covid_19/widgets/counter.dart';
 import 'package:covid_19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() => runApp(MyApp()); //memanggil nama class yg akan d run,
+void main() => runApp(MyApp()); //fungsi utama dalam aplikasi yang akan menjadii entry point yang akan dieksekusi saat aplikasi pertama kali dibuka
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // tempat untuk membuat wigdet yang konfigurasinya diinisiasi sejak awal. MyApp adalah widget induk
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Covid 19',
-      theme: ThemeData(
-          scaffoldBackgroundColor: kBackgroundColor,
-          fontFamily: "Poppins",
-          textTheme: TextTheme(
-            body1: TextStyle(color: kBodyTextColor),
+    return MaterialApp( //MaterialApp adlah widget yang membungkus beberapa widget yang menggunakan tema material design
+      debugShowCheckedModeBanner: false, //menghapus banner di hot reload
+      title: 'Covid 19', //judul
+      theme: ThemeData( //tema
+          scaffoldBackgroundColor: kBackgroundColor, // Scaffold adalah widget untuk struktur dasar material design
+          fontFamily: "Poppins", //font text
+          textTheme: TextTheme( // widget untuk membuat text
+            body1: TextStyle(color: kBodyTextColor), //warna text
           )),
       home: HomeScreen(),
     );
   }
 }
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget { //widget yang dapat diperbarui kapanpun sesuai kebutuhan
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState(); //kode dasar statefull widget
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double offset = 0;
 
   @override
-  void initState() {    //sebuah function yg akan dijalankan saat aplikasi awal dibuka
+  void initState() {
     // TODO: implement initState
     super.initState();
     controller.addListener(onScroll);
@@ -54,34 +54,34 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { //kode dasar statefull widget
     return Scaffold(
-      body: SingleChildScrollView(
+      body: SingleChildScrollView( //memuat content yang akan ditampilkan
         controller: controller,
-        child: Column(
-          children: <Widget>[
+        child: Column( //menata widget berjejer kebawah
+          children: <Widget>[ //memasukkan widget dalam children
             MyHeader(
-              image: "assets/icons/Drcorona.svg",
-              textTop: "Dirumah Saja !!!",
-              textBottom: " ",
+              image: "assets/icons/Drcorona.svg", //untuk memanggil gambar di asset
+              textTop: "Dirumah Saja !!!", //Tulisan Atas
+              textBottom: " ", //tulisan bawah
               offset: offset,
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              height: 60,
+            Container( //untuk menampung objek
+              margin: EdgeInsets.symmetric(horizontal: 20), //memberikan margin sebesar value secara horizontal
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),//memberikan padding sebesar value secara horizontal dan vertikal
+              height: 60, //tinggi
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: Color(0xFFE5E5E5),
+              decoration: BoxDecoration( //mengatur style dari container sesuai keinginan
+                color: Colors.white, //warna box
+                borderRadius: BorderRadius.circular(25),//untuk mengatur lengkungan sudut kotak
+                border: Border.all( //semua di beri border
+                  color: Color(0xFFE5E5E5), //warna border
                 ),
               ),
-              child: Row(
-                children: <Widget>[
-                  SvgPicture.asset("assets/icons/maps-and-flags.svg"),
-                  SizedBox(width: 20),
+              child: Row(//menata widget berjejer ke samping
+                children: <Widget>[ //memasukkan widget dalam children
+                  SvgPicture.asset("assets/icons/maps-and-flags.svg"), //mengambil image
+                  SizedBox(width: 20), //ukuran box
                   Expanded(
                     child: DropdownButton(
                       isExpanded: true,
@@ -103,13 +103,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20), //ukuran box
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
+              padding: EdgeInsets.symmetric(horizontal: 20), //memberikan padding sebesar value secara horizontal
+              child: Column( //menata widget berjejer kebawah
+                children: <Widget>[ //memasukkan widget dalam children
+                  Row( // untuk mengatur widget agar tersusun secara horizontal
+                    children: <Widget>[ //memasukkan widget dalam children
                       RichText(
                         text: TextSpan(
                           children: [
@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             TextSpan(
                               text: "Terakhir Update 28 Maret 2020 ",
                               style: TextStyle(
-                                color: kTextLightColor,
+                                color: kTextLightColor, //warnatext
                               ),
                             ),
                           ],
@@ -131,44 +131,44 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                  Container( //untuk menampung obyek
+                    padding: EdgeInsets.all(20), //memberikan padding sebesar value yang ada didalam semua sisi(kanan, kiri,atas,bawah)
+                    decoration: BoxDecoration( //mengatur style dari container sesuai keinginan
+                      borderRadius: BorderRadius.circular(20), //untuk mengatur lengkungan sudut kotak
                       color: Colors.white,
                       boxShadow: [
-                        BoxShadow(
+                        BoxShadow( //bayangn box
                           offset: Offset(0, 4),
-                          blurRadius: 30,
-                          color: kShadowColor,
+                          blurRadius: 30, //radius blur
+                          color: kShadowColor, //warna
                         ),
                       ],
                     ),
-                    child: Row(   // membuat baris yg isinya kan kesamping
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Counter(  //baris 1
-                          color: kInfectedColor,
-                          number: 1046,
-                          title: "Positif",
+                    child: Row( //menata widget berjejer ke samping
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween, // mengatur aligment dari widget yang ada didalamnya. bersifat sejalan dengan widgetnya
+                      children: <Widget>[ //memasukkan widget dalam children
+                        Counter(
+                          color: kInfectedColor, //warna
+                          number: 1046, //angka
+                          title: "Positif", //judul
                         ),
-                        Counter(    //baris 2
-                          color: kDeathColor,
-                          number: 87,
-                          title: "Meninggal",
+                        Counter(
+                          color: kDeathColor,//warna
+                          number: 87,//angka
+                          title: "Meninggal",//judul
                         ),
-                        Counter(    //baris 3
-                          color: kRecovercolor,
-                          number: 46,
-                          title: "Sembuh",
+                        Counter(
+                          color: kRecovercolor,//warna
+                          number: 46,//angka
+                          title: "Sembuh",//judul
                         ),
                       ],
                     ),
                   ),
                   SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                  Row( // untuk mengatur widget agar tersusun secara horizontal
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // mengatur aligment dari widget yang ada didalamnya. bersifat sejalan dengan widgetnya
+                    children: <Widget>[ //memasukkan widget dalam children
                       Text(
                         "Persebaran Virus",
                         style: kTitleTextstyle,
@@ -176,13 +176,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20),
-                    padding: EdgeInsets.all(20),
+                  Container(//untuk menampung obyek
+                    margin: EdgeInsets.only(top: 20), //memberikan margin ssebesar value pada bagian atas
+                    padding: EdgeInsets.all(20), //memberikan padding sebesar value yang ada didalam semua sisi(kanan, kiri,atas,bawah)
                     height: 178,
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                    decoration: BoxDecoration( //mengatur style dari container sesuai keinginan
+                      borderRadius: BorderRadius.circular(20), //untuk mengatur lengkungan sudut kotak
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
