@@ -3,12 +3,12 @@ import 'package:covid_19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class InfoScreen extends StatefulWidget {
+class InfoScreen extends StatefulWidget { // widget yang dapat diperbarui sesuai kebutuhan
   @override
-  _InfoScreenState createState() => _InfoScreenState();
+  _InfoScreenState createState() => _InfoScreenState(); //kode dasar statefull
 }
 
-class _InfoScreenState extends State<InfoScreen> {
+class _InfoScreenState extends State<InfoScreen> { // widget controller
   final controller = ScrollController();
   double offset = 0;
 
@@ -26,19 +26,19 @@ class _InfoScreenState extends State<InfoScreen> {
     super.dispose();
   }
 
-  void onScroll() {
+  void onScroll() { // implementasi onScroll
     setState(() {
       offset = (controller.hasClients) ? controller.offset : 0;
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { //widget utama untuk membuat sebuah halaman
     return Scaffold(
       body: SingleChildScrollView(
         controller: controller,
 
-          child: Column(
+        child: Column( //menata widget column
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             MyHeader(
@@ -47,7 +47,7 @@ class _InfoScreenState extends State<InfoScreen> {
               textBottom: "Tentang Covid-19.",
               offset: offset,
             ),
-            Padding(
+            Padding( //membuat atau memposisikan widget child yang dimilikinya dengan memberikan jarak atau padding
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,10 +56,10 @@ class _InfoScreenState extends State<InfoScreen> {
                     "Gejala",
                     style: kTitleTextstyle,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20), //untuk membuat box horizontal
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
+                    child: Row( //untuk menyusun layout
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         SymptomCard(
@@ -78,18 +78,18 @@ class _InfoScreenState extends State<InfoScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20), //ukuran box
                   Text("Pencegahan", style: kTitleTextstyle),
                   SizedBox(height: 20),
                   PreventCard(
                     text:
-                        "Gunakan masker yang sesuai standart kesehatan saat keluar rumah untuk mencegah masuknya virus secara langsung",
+                    "Gunakan masker yang sesuai standart kesehatan saat keluar rumah untuk mencegah masuknya virus secara langsung",
                     image: "assets/images/mask_1.png",
                     title: "Menggunakan Masker",
                   ),
                   PreventCard(
                     text:
-                        " Biasakan mencuci tangan setelah keluar rumah menggunakan sabun atau handsanitizer",
+                    " Biasakan mencuci tangan setelah keluar rumah menggunakan sabun atau handsanitizer",
                     image: "assets/images/wash_your_hands_1.png",
                     title: "Cuci Tangan",
                   ),
@@ -112,7 +112,7 @@ class _InfoScreenState extends State<InfoScreen> {
   }
 }
 
-class PreventCard extends StatelessWidget {
+class PreventCard extends StatelessWidget { // widget yang dapat diperbarui sesuai kebutuhan
   final String image;
   final String title;
   final String text;
@@ -132,7 +132,7 @@ class PreventCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.centerLeft,
           children: <Widget>[
-            Container(
+            Container( //mengatur penempatan dan ukuran
               height: 126,
               width: double.infinity,
               decoration: BoxDecoration(
@@ -147,14 +147,14 @@ class PreventCard extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(image),
-            Positioned(
+            Image.asset(image), //untuk pengaturan image pada PreventCard
+            Positioned( //posisi image
               left: 130,
-              child: Container(
+              child: Container( //mengatur penempatan dan ukuran
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 height: 145,
                 width: MediaQuery.of(context).size.width - 170,
-                child: Column(
+                child: Column( //pengaturan columnnya
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -164,7 +164,7 @@ class PreventCard extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
-                    Expanded(
+                    Expanded( //untuk memperluas child
                       child: Text(
                         text,
                         maxLines: 4,
@@ -174,7 +174,7 @@ class PreventCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Align(
+                    Align( //meluruskan
                       alignment: Alignment.topRight,
                       child: SvgPicture.asset("assets/icons/forward.svg"),
                     ),
@@ -189,7 +189,7 @@ class PreventCard extends StatelessWidget {
   }
 }
 
-class SymptomCard extends StatelessWidget {
+class SymptomCard extends StatelessWidget { // widget yang dapat diperbarui sesuai kebutuhan
   final String image;
   final String title;
   final bool isActive;
@@ -201,7 +201,7 @@ class SymptomCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { //widget utama untuk membuat sebuah halaman
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -210,18 +210,18 @@ class SymptomCard extends StatelessWidget {
         boxShadow: [
           isActive
               ? BoxShadow(
-                  offset: Offset(0, 10),
-                  blurRadius: 20,
-                  color: kActiveShadowColor,
-                )
+            offset: Offset(0, 10),
+            blurRadius: 20,
+            color: kActiveShadowColor,
+          )
               : BoxShadow(
-                  offset: Offset(0, 3),
-                  blurRadius: 6,
-                  color: kShadowColor,
-                ),
+            offset: Offset(0, 3),
+            blurRadius: 6,
+            color: kShadowColor,
+          ),
         ],
       ),
-      child: Column(
+      child: Column( //menata column
         children: <Widget>[
           Image.asset(image, height: 90),
           Text(

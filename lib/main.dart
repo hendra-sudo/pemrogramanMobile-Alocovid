@@ -4,7 +4,7 @@ import 'package:covid_19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp()); //memanggil nama class yg akan d run,
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   double offset = 0;
 
   @override
-  void initState() {
+  void initState() {    //sebuah function yg akan dijalankan saat aplikasi awal dibuka
     // TODO: implement initState
     super.initState();
     controller.addListener(onScroll);
@@ -144,20 +144,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    child: Row(
+                    child: Row(   // membuat baris yg isinya kan kesamping
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Counter(
+                        Counter(  //baris 1
                           color: kInfectedColor,
                           number: 1046,
                           title: "Positif",
                         ),
-                        Counter(
+                        Counter(    //baris 2
                           color: kDeathColor,
                           number: 87,
                           title: "Meninggal",
                         ),
-                        Counter(
+                        Counter(    //baris 3
                           color: kRecovercolor,
                           number: 46,
                           title: "Sembuh",
