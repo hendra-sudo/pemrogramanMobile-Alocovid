@@ -7,6 +7,9 @@ Aplikasi ini menerapkan SDGS3 yaitu Good Health and well being, dan kami akan me
 # Progres 2 : Membuat custom widget
 # Progres 3 : Membuat custom ListView
 # UTS : Presentasi
+# Progres 4 :  Native Feature
+# Progres 5 :  Maps
+
 
 
 
