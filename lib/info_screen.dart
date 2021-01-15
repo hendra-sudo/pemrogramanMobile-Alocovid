@@ -38,7 +38,46 @@ class _InfoScreenState extends State<InfoScreen> { // widget controller
       body: SingleChildScrollView(
         controller: controller,
 
-
+        child: Column( //menata widget column
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            MyHeader(
+              image: "assets/icons/coronadr.svg",
+              textTop: "Cari Tahu ",
+              textBottom: "Tentang Covid-19.",
+              offset: offset,
+            ),
+            Padding( //membuat atau memposisikan widget child yang dimilikinya dengan memberikan jarak atau padding
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Gejala",
+                    style: kTitleTextstyle,
+                  ),
+                  SizedBox(height: 20), //untuk membuat box horizontal
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row( //untuk menyusun layout
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        SymptomCard(
+                          image: "assets/images/headache.png",
+                          title: "Pusing",
+                          isActive: true,
+                        ),
+                        SymptomCard(
+                          image: "assets/images/caugh.png",
+                          title: "Batuk",
+                        ),
+                        SymptomCard(
+                          image: "assets/images/fever.png",
+                          title: "Demam",
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(height: 20), //ukuran box
                   Text("Pencegahan", style: kTitleTextstyle),
                   SizedBox(height: 20),
